@@ -40,7 +40,7 @@ const projectList = [
     title: "Web Development for Beginners",
     description:
       "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
-    url: "https://github.com/microsoft/web-dev-for-beginners",
+    url: "",
   },
   {
     title: "My Resume Site",
@@ -51,7 +51,7 @@ const projectList = [
   {
     title: "GitHub",
     description:
-      "Video interview to explain when to use GitHub and how best to use each tool.",
+      "A collection of repositories that I've worked on. These include projects from school, personal projects, professional projects and contributions to open source.",
     url: "",
   },
 ];
