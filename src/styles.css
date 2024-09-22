@@ -46,7 +46,7 @@ section img.background {
 }
 
 h1 {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Playfair Display";
   font-size: 7rem;
   font-weight: 400;
   line-height: 0.8;
@@ -123,3 +123,4 @@ img.socialIcon {
   height: 30px;
   width: 30px;
 }
+
