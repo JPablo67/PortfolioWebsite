@@ -24,19 +24,24 @@ const imageAltText = "purple and blue abstract background";
  * Sort description that expands on your title on the Home component.
  */
 const description =
-  "I'm a UI/UX student studying at Barnett Technical University. I enjoy creating unique and simplistic user interfaces in creative ways.";
+  "I’m a Software Developer currently finishing my Bachelor’s Degree in Software Engineering. I enjoy building and applying solutions through software. While I primarily work on the back end, I am a full-stack software developer. I have a passion for learning new things and implementing the latest industry standards in my projects.";
 
 /**
  * List of some of skills or technologies you work on, are learning,
  * passionate about, or enjoy,
  */
 const skillsList = [
-  "Web design",
-  "User experience",
-  "Inclusive design",
-  "Focus group testing",
-  "Mobile user interfaces",
-  "Graphic design",
+  "Back-end development with Java(8 / 11 / 17 / 22) and Python",
+  "Front-end design with a focus on user experience",
+  "Managing databases and optimizing data storage",
+  "Using Docker and Kubernetes for project deployment",
+  "Creating reliable, maintainable software using best practices",
+  "Quick learning and adapting to new industry standards",
+  "Collaborative problem-solving and teamwork",
+  "Java (Spring Boot, Hibernate, JPA)",
+  "Angular (TypeScript, JavaScript, HTML, CSS)",
+  "RESTful APIs and microservices",
+  "SOILD principles and design patterns",
 ];
 
 /**
@@ -45,7 +50,7 @@ const skillsList = [
  * about you on a professional level.
  */
 const detailOrQuote =
-  "I am passionate about solving problems in new creative ways to drive innovation. By leveraging my UI/UX experience I continually look for new and better ways to make tech accessible by all.";
+  "I am passionate about creating innovative software solutions that address user needs and enhance accessibility. By leveraging my development experience, I continuously seek new ways to improve the functionality and usability of technology for everyone. With the highest standards of quality, security and maintainability, I strive to deliver the best possible software solutions.";
 
 const About = () => {
   return (
@@ -65,15 +70,19 @@ const About = () => {
         <hr />
         <ul
           style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "flex-start",
             textAlign: "left",
-            columns: 2,
             fontSize: "1.25rem",
             margin: "2rem 3rem",
             gap: "3rem",
           }}
         >
           {skillsList.map((skill) => (
-            <li key={skill}>{skill}</li>
+            <li key={skill} style={{ flex: "1 1 45%", minWidth: "200px" }}>
+              {skill}
+            </li>
           ))}
         </ul>
         <hr />
