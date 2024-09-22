@@ -25,14 +25,14 @@ import "./styles.css";
  */
 const siteProps = {
   name: "Juan Pablo Acosta",
-  title: "Web Designer & Content Creator",
-  email: "alex@example.com",
-  gitHub: "microsoft",
-  instagram: "microsoft",
-  linkedIn: "satyanadella",
+  title: "Software Developer Software Engineer",
+  email: "acostapablose@gmail.com",
+  gitHub: "https://github.com/JPablo67",
+  instagram: "",
+  linkedIn: "https://www.linkedin.com/in/juan-pablo-acosta-91a521195/",
   medium: "",
-  twitter: "microsoft",
-  youTube: "Code",
+  twitter: "",
+  youTube: "",
 };
 
 const primaryColor = "#4E567E";
