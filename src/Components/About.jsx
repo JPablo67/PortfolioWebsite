@@ -75,8 +75,8 @@ const About = () => {
             justifyContent: "flex-start",
             textAlign: "left",
             fontSize: "1.25rem",
-            margin: "2rem 3rem",
-            gap: "3rem",
+            gap: "2rem",
+            marginLeft: "-50px",
           }}
         >
           {skillsList.map((skill) => (
