@@ -29,7 +29,7 @@ const siteProps = {
   email: "acostapablose@gmail.com",
   gitHub: "JPablo67",
   instagram: "",
-  linkedIn: "juan-pablo-acosta-91a521195",
+  linkedIn: "91a521195",
   medium: "",
   twitter: "",
   youTube: "",
