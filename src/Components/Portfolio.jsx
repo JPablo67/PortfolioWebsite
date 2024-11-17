@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
+// Project list for portfolio
 const projectList = [
   {
     title: "10 Things To Know About Azure Static Web Apps 🎉",
     description:
-      "Collaboration to create a beginner friendly article to help explain Azure Static Web Apps and tooling to get started.",
+      "Collaboration to create a beginner-friendly article to help explain Azure Static Web Apps and tooling to get started.",
     url: "",
   },
   {
@@ -22,15 +23,17 @@ const projectList = [
   {
     title: "GitHub",
     description:
-      "A collection of repositories that I've worked on. These include projects from school, personal projects, professional projects and contributions to open source.",
+      "A collection of repositories that I've worked on. These include projects from school, personal projects, professional projects, and contributions to open source.",
     url: "https://github.com/JPablo67",
   },
 ];
 
+// Portfolio Component
 const Portfolio = () => {
   const [formData, setFormData] = useState({ email: "", message: "" });
   const [status, setStatus] = useState(""); // For feedback to the user
 
+  // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -39,12 +42,13 @@ const Portfolio = () => {
     }));
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
 
     try {
-      const response = await fetch("http://200.118.101.70:5001/api/messages", {
+      const response = await fetch("https://200.118.101.70:5001/api/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
