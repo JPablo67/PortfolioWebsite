@@ -1,32 +1,5 @@
-/**
- * Portfolio component
- *
- * Highlights some of  your creations. These can be designs, websites,
- * open source contributions, articles you've written and more.
- *
- * This is a great area for you to to continually add to and refine
- * as you continue to learn and create.
- */
+import React, { useState } from "react";
 
-import React from "react";
-
-/**
- * Desk image
- *
- * Below is a sample desk image. Feel free to update this to an image of your choice,
- * updating below imageAltText to string that represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a photo you
- * freely use on your site.
- */
-
-
-/**
- * Project list
- *
- * An array of objects that will be used to display for your project
- * links section. Below is a sample, update to reflect links you'd like to highlight.
- */
 const projectList = [
   {
     title: "10 Things To Know About Azure Static Web Apps 🎉",
@@ -55,6 +28,22 @@ const projectList = [
 ];
 
 const Portfolio = () => {
+  const [formData, setFormData] = useState({ email: "", message: "" });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Email: ${formData.email}\nMessage: ${formData.message}`);
+    setFormData({ email: "", message: "" });
+  };
+
   return (
     <section className="padding" id="portfolio">
       <h2 style={{ textAlign: "center" }}>Portfolio</h2>
@@ -69,6 +58,67 @@ const Portfolio = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Contact Form */}
+      <div style={{ marginTop: "2rem" }}>
+        <h3 style={{ textAlign: "center" }}>Contact Me</h3>
+        <form
+          onSubmit={handleSubmit}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            maxWidth: "400px",
+            margin: "0 auto",
+          }}
+        >
+          <label htmlFor="email" style={{ marginBottom: "0.5rem" }}>
+            Email:
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            style={{
+              padding: "0.5rem",
+              marginBottom: "1rem",
+              borderRadius: "4px",
+              border: "1px solid #ccc",
+            }}
+          />
+          <label htmlFor="message" style={{ marginBottom: "0.5rem" }}>
+            Message:
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            style={{
+              padding: "0.5rem",
+              marginBottom: "1rem",
+              borderRadius: "4px",
+              border: "1px solid #ccc",
+            }}
+          />
+          <button
+            type="submit"
+            style={{
+              padding: "0.7rem",
+              backgroundColor: "#007bff",
+              color: "#fff",
+              border: "none",
+              borderRadius: "4px",
+              cursor: "pointer",
+            }}
+          >
+            Send
+          </button>
+        </form>
       </div>
     </section>
   );
