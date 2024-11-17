@@ -44,7 +44,7 @@ const Portfolio = () => {
     setStatus("Sending...");
 
     try {
-      const response = await fetch("http://localhost:5001/api/messages", {
+      const response = await fetch("http://200.118.101.70:5001/api/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
