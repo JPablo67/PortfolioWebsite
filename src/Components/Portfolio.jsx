@@ -29,6 +29,7 @@ const projectList = [
 
 const Portfolio = () => {
   const [formData, setFormData] = useState({ email: "", message: "" });
+  const [status, setStatus] = useState(""); // For feedback to the user
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,10 +39,29 @@ const Portfolio = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Email: ${formData.email}\nMessage: ${formData.message}`);
-    setFormData({ email: "", message: "" });
+    setStatus("Sending...");
+
+    try {
+      const response = await fetch("http://localhost:5001/api/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("Message sent successfully!");
+        setFormData({ email: "", message: "" });
+      } else {
+        const errorData = await response.json();
+        setStatus(`Failed to send message: ${errorData.error}`);
+      }
+    } catch (error) {
+      setStatus(`Error: ${error.message}`);
+    }
   };
 
   return (
@@ -119,6 +139,9 @@ const Portfolio = () => {
             Send
           </button>
         </form>
+        <p style={{ textAlign: "center", marginTop: "1rem", color: "green" }}>
+          {status}
+        </p>
       </div>
     </section>
   );
